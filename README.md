@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lista de Tarefas - Next.js 15
 
-## Getting Started
+Aplicação simples de listagem e adição de tarefas, desenvolvida com Next.js 15 (App Router) e TypeScript, com testes unitários usando Jest e Testing Library.
 
-First, run the development server:
+## Funcionalidades
+
+- Exibir lista de tarefas carregadas via Server Component
+- Adicionar novas tarefas via formulário controlado
+- Contagem de tarefas com hook personalizado (`useContadorDeTarefas`)
+- Testes unitários cobrindo componentes e hook
+
+## Estrutura do Projeto
+
+```
+├── app/
+│   └── page.tsx                      # Server Component principal
+├── components/
+│   ├── NovaTarefa.tsx                # Client Component - formulário de adição
+│   └── ListaDeTarefas.tsx            # Client Component - lista de tarefas
+├── hooks/
+│   └── useContadorDeTarefas.ts       # Hook personalizado de contagem
+├── lib/
+│   └── tarefas.ts                    # Dados simulados e tipo Tarefa
+└── tests/
+    ├── NovaTarefa.test.tsx
+    ├── useContadorDeTarefas.test.ts
+    └── ListaDeTarefas.test.tsx
+```
+
+## Instalação
+
+```bash
+npm install
+```
+
+## Executar o projeto
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse [http://localhost:3000](http://localhost:3000) no navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Executar os testes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm test
+```
 
-## Learn More
+## Executar com cobertura
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run test:coverage
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Tecnologias
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Next.js 15 (App Router)
+- TypeScript
+- Jest
+- Testing Library (@testing-library/react)
